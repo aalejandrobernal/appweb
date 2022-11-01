@@ -1,0 +1,31 @@
+{% extends './layout.html'%}
+
+	
+{# comentarios #}
+{% block title%}{{data.titulo}}{%endblock%}
+{% block title2%}{{data.titulo2}}{%endblock%}
+{% block body%}
+
+ <section class="grid" id="grid">
+        <div class="item"
+        <?php $resultado = mysqli_query($conexion, $pelicula);        
+            while($row = mysqli_fetch_assoc($resultado)) { ?> 
+            
+                    <div class="item"                    
+							data-topografico="<?php echo $row ["TOPOGRAFICO"] ?>"
+							data-titulo="<?php echo $row ["TITULO"] ?>"
+							data-categoria="<?php echo $row ["CATEGORIA"] ?>"
+							data-etiquetas=""
+							data-descripcion="<?php echo $row ["DESCRIPCION"]?>"
+							data-trailer="<?php echo $row ["TRAILER"]?>"
+						>
+						<div class="item-contenido">
+						<img src="img/<?php echo $row ["TOPOGRAFICO"]?>.jpg" loading="lazy" alt="<?php echo $row ["TOPOGRAFICO"]?>">
+					</div>        
+						</div>
+        <?php } ?>             
+    </section> 
+  </section>
+
+
+{%endblock%}

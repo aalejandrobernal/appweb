@@ -9,17 +9,17 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.1.6/dist/css/themes/splide-skyblue.min.css">
 	
 
-	<title>BiblioMovies</title>
+	<title>{{data.titulo}}</title>
 </head>
 <body>
 	<header>
 		<div class="contenedor">
-			<h2 class="logotipo">BiblioMovies</h2>
+			<h2 class="logotipo">{{data.titulo2}}</h2>
             
 			<nav>
-                <a href="login.html" class="activo">Login</a>
+                <a href="/login" class="activo">Login</a>
 				<a href="#" class="activo">Inicio</a>
-				<a href="index2.php">Peliculas</a>
+				<a href="/peliculas">Peliculas</a>
 				<a href="#">Mùsica</a>
 				<a href="#">DVD Informativos</a>
 				<a href="#">Documentales</a>
@@ -54,8 +54,8 @@
 			</div> 			
             <div class="splide__track">				
                 <ul class="splide__list">				
-                    <?php $resultado = mysqli_query($conexion, $pelicula);        
-                            while($row = mysqli_fetch_assoc($resultado)) { ?>  
+                    <!-- <?php $resultado = mysqli_query($conexion, $pelicula);         -->
+                            <!-- while($row = mysqli_fetch_assoc($resultado)) { ?>   -->
                                 <li class="splide__slide">
                                     <div clas="splide__list"
 										data-topografico="<?php echo $row ["TOPOGRAFICO"] ?>"
@@ -70,7 +70,7 @@
 										<p><?php echo $row ["TOPOGRAFICO"] ?></p>
 									</div>
 								</li>
-                            <?php } ?>
+                            <!-- <?php } ?> -->
                 </ul>
 				
             </div>
@@ -128,7 +128,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.1.6/dist/js/splide.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
 	<script src="https://kit.fontawesome.com/3d52a28024.js" crossorigin="anonymous"></script>
-	<script src="js/main.js"></script>
+	<script src="{{url_for('static' , filename='js/main.js') }}"></script>
 	
 </body>
 </html>

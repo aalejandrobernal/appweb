@@ -1,42 +1,48 @@
-:root {
-	--rojo:  #F21B54;
-	--fondo: #182540;
-}
 * {
 	margin: 0;
-	padding: 0px;
+	padding: 0;
 	box-sizing: border-box;
 }
+
 body {
-	background: var(--fondo);
+	background: #182540;
 	font-family: 'Open Sans', sans-serif;
-	align-items: none;
-	min-height: 100vh;
 }
+
+a {
+	text-decoration: none;
+}
+
 .contenedor {
+	width: 100%;
 	max-width: 1200px;
-	width: 90%;
 	margin: auto;
 }
+
 /* ------------------------- */
 /* HEADER */
 /* ------------------------- */
+
 header {
-	padding: 30px 0;
+	padding: none;
 }
-header .contenedor {
+
+header .contenedor1 {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	padding: 30px 0;
 }
+
 header .logotipo {
 	font-family: 'Bebas Neue', cursive;
 	font-weight: normal;
-	color:  #F21B54;
+	color: #F21B54;
 	font-size: 40px;
+	padding-left: 15px;
 }
 header nav a {
-	color: #AAA;
+	color: rgb(219, 219, 219);
 	text-decoration: none;
 	margin-right: 20px;
 }
@@ -44,71 +50,92 @@ header nav a:hover,
 header nav a.activo {
 	color: #F21B54;
 }
-
-/* ---- ----- ----- Pelicula Principal ----- ----- ----- */
-.pelicula-principal {
-	font-size: 16px;
-	min-height: 40.62em;
-	color: #fff;
-	background: linear-gradient(rgba(0, 0, 0, .50) 0%, rgba(0,0,0,.50) 100%), url(../img/backdrop.jpg);
-	background-position: center center;
-	background-size: cover;
-	margin-bottom: 3.12em;
+header form {
+	width: 100%;
 	display: flex;
-	align-items: flex-end;
-}
-
-.pelicula-principal .contenedor {
-	margin: 0 auto;
-	margin-bottom: 6.25em;
-}
-
-.pelicula-principal .titulo {
-	font-weight: 600;
-	font-size: 3.12em;
-	margin-bottom: 0.4em;
-}
-
-.pelicula-principal .descripcion {
-	font-weight: normal;
-	font-size: 1em;
-	line-height: 1.75em;
-	max-width: 50%;
-	margin-bottom: 1.25em;
-}
-
-.pelicula-principal .boton {
-	background: rgba(0,0,0, 0.5);
-	border: none;
-	border-radius: 0.31em;
-	padding: 0.93em 1.87em;
-	color: #fff;
-	margin-right: 1.25em;
-	cursor: pointer;
-	transition: .3s ease all;
-	font-size: 1.12em;
-	outline: none;
-}
-
-.pelicula-principal .boton:hover {
-	background:#8c7f83;
-	color: #000;
-}
-
-.pelicula-principal .boton i {
-	margin-right: 1.25em;
-}
-/* ---- ----- ----- titulos ----- ----- ----- */
-.contenedor-titulo {
-	display: flex;
-	justify-content: space-between;
-	align-items: end;
-}
-.contenedor-titulo h3 {
-	color: #fff;
-	font-size: 30px;
-	padding: 0px 0px 20px;
+	justify-content: center;
 	
+}
+header .barra-busqueda {
+	width: 70%;
+	height: 40px;
+	line-height: 40px;
+	background: #fff;
+	padding: 0 20px;
+	border-radius: 100px;
+	border: none;
+	text-align: center;
+	font-size: 16px;
+}
+
+header .categorias {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+header .categorias a {
+	color: rgb(219, 219, 219);
+	margin: 10px 20px;
+	font-size: 18px;
+	font-weight: 700;
+}
+
+header .categorias a.activo {
+	color:#F21B54 ;
+}
+
+/* ------------------------- */
+/* paginacion */
+/* ------------------------- */
+.paginacion {
+	margin:20px 0;
+}
+.paginacion ul {
+	list-style:none;
+	text-align: center;
+}
+.paginacion ul li {
+	display:inline-block;
+	margin-right:10px;
+}
+
+.paginacion ul li a {
+	display:block;
+	padding:10px 20px;
+	color:#fff;
+	border-radius: 20px;
+/*	background:#024959;*/
+
+	text-decoration: none;
+}
+
+.paginacion ul li a:hover {
+	background:#F21B54;
+}
+
+.paginacion ul li .active {
+	background:#F21B54;
+	font-weight:bold;
+}
+/* ------------------------- */
+/* tabla basica */
+/* ------------------------- */
+header .columna {
+	float: left;
+	width: 25%;
+	padding-right: 5px;
+}
+
+header .fila::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+header img {
+	/* Para que sea responsiva */
+	width: 100%;
 }
 /* ------------------------- */
 /* Grid */
@@ -142,81 +169,6 @@ header nav a.activo {
 	cursor: pointer;
 	vertical-align: top;
 }
-/* ------------------------- */
-/* splide */
-/* ------------------------- */
-.contenedor-flex{
-	margin: 30px;
-}
-.splide{
-	width: 100%;
-	height: auto;
-	background-position: center center;
-	padding: 56px;
-	background: #0d1322;
-	
-	margin-right:auto
-}
-/* .splide__track{
-	
-	height: 500px;
-	margin: auto;
-}*/
-.splide__list{
-	
-	height: 200px;
-	
-	
-	width: 100%;
-	
-}
-.splide__slide img{
-	padding: 3px;
-	width: 100%;
-	height: auto;
-	margin: auto;
-	cursor: pointer;
-} 
-.splide__slide p{
-	
-	text-align: center;
-	color: #ccc;
-	font-family: 'Open Sans', sans-serif;
-} 
-.my-slider-progress {
-	background: #F21B54;
-	
-  }
-  
-.my-slider-progress-bar {
-	background: #fff;
-	height: 1px;	
-	transition: width 400ms ease;
-	width: 0;
-  }
-
-.contenedor-boton{
-	max-width: 30px;
-	height: 20hv;
-	margin: auto;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-/* .splide__arrow.splide__arrow--prev,
-.splide__arrow.splide__arrow--next{
-	width: 20px;
-	height: 20px;
-	background: crimson;
-	border-radius: 2px;
-	border:none;
-	cursor:pointer;
-	padding: 2px;
-	color: white;
-	font-size: 10px;
-	transition: .3s ease all;
-} */
 
 /* ------------------------- */
 /* Overlay */
@@ -384,12 +336,13 @@ footer .creado-por {
 
 footer .creado-por a {color: #fff;}
 footer .creado-por a:hover {text-decoration: underline;}
+
 /* ------------------------- */
 /* Mediaqueries */
 /* ------------------------- */
-@media screen and (max-width: 1260px) {
-	.carousel .carousel1_contenedor{
-		width: calc(10% - 20px);
+@media screen and (max-width: 1366px) {
+	.grid .item {
+		width: calc(20% - 20px);
 	}
 	.overlay .texto{
 		width: calc(50% - 20px);
@@ -397,7 +350,7 @@ footer .creado-por a:hover {text-decoration: underline;}
 	.overlay .texto .descripcion,
 	.overlay .texto .titulo,
 	.overlay .texto .topografico{
-		font-size: 10px;
+		font-size: 15px;
 		padding: 10px;
 	}
 	.overlay .texto .t-topografico{
@@ -421,6 +374,4 @@ footer .creado-por a:hover {text-decoration: underline;}
 	header .barra-busqueda {
 		width: 80%;
 	}
-	
-	
 }
